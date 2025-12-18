@@ -14,24 +14,40 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    mediumZoom: true,
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Redis', link: '/redis/' },
+      { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
-
     sidebar: [
-      {
-        text: 'Examples',
+       {
+        text: 'Redis',
+        collapsible: true,
+        collapsed: false,
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          {
+            text: 'Redis实战',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              { text: '初识Redis', link: '/redis/intro' },
+            ]
+          },
+          {
+            text: 'Git',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              { text: 'Git基础', link: '/git/git-base' },
+            ]
+          }
         ]
       }
     ],
-
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://qingchi27.github.io/my-notes' }
     ]
   }
 })
