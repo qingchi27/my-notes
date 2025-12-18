@@ -4,6 +4,9 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "My Notes",
   description: "Learning Notes",
+  base: '/my-notes/',
+  title: 'My Notes',
+  description: 'Learning Notes',
   vite: {
     server: {
       host: '127.0.0.1',
