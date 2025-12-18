@@ -114,7 +114,7 @@ ssh-keygen -t rsa -C "你的邮箱"
 可以指定名称生成对应的密钥，上传到不同的项目或者平台使用。
 
 ```bash
-ssh-keygen -t rsa -C 'chenhengji@luckybus.me' -f ~/.ssh/bettips_id_rsa
+ssh-keygen -t rsa -C 'xxxx@luckybus.me' -f ~/.ssh/bettips_id_rsa
 ```
 ![](/images/git/git-config-14.png)
 
