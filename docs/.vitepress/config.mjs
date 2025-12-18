@@ -47,7 +47,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://qingchi27.github.io/my-notes' }
+      { icon: 'github', link: 'https://github.com/qingchi27/my-notes' }
     ]
   }
 })
