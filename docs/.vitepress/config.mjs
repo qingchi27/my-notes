@@ -17,12 +17,28 @@ export default defineConfig({
     mediumZoom: true,
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Java基础', link: '/java/' },
       { text: 'Redis', link: '/redis/' },
       { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
     sidebar: [
-       {
+      {
+        text: 'Java基础',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          {
+            text: '并发编程',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              { text: '并发编程基础', link: '/java/concurrency/basics' },
+            ]
+          },
+        ]
+      },
+      {
         text: 'Redis',
         collapsible: true,
         collapsed: false,
