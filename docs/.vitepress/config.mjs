@@ -35,6 +35,7 @@ export default defineConfig({
             items: [
               { text: '并发编程基础', link: '/java/concurrency/basics' },
               { text: 'JMM', link: '/java/concurrency/jmm' },
+              { text: 'volatile', link: '/java/concurrency/volatile' },
             ]
           },
         ]
