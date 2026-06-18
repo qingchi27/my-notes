@@ -34,6 +34,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: '并发编程基础', link: '/java/concurrency/basics' },
+              { text: 'JMM', link: '/java/concurrency/jmm' },
             ]
           },
         ]
