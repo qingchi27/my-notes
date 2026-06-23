@@ -34,6 +34,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: '并发编程基础', link: '/java/concurrency/basics' },
+              { text: 'ThreadLocal', link: '/java/concurrency/threadlocal' },
               { text: 'JMM', link: '/java/concurrency/jmm' },
               { text: 'volatile', link: '/java/concurrency/volatile' },
               { text: 'synchronized', link: '/java/concurrency/synchronized' },
