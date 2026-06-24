@@ -39,6 +39,7 @@ export default defineConfig({
               { text: 'volatile', link: '/java/concurrency/volatile' },
               { text: 'synchronized', link: '/java/concurrency/synchronized' },
               { text: 'CAS & AQS', link: '/java/concurrency/cas-aqs' },
+              { text: '线程池（ThreadPool）', link: '/java/concurrency/thread-pool' },
             ]
           },
         ]
