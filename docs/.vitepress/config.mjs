@@ -29,6 +29,16 @@ export default defineConfig({
         collapsed: false,
         items: [
           {
+            text: 'JVM',
+            collapsible: true,
+            collapsed: true,
+            items: [
+              { text: 'Java 内存区域', link: '/java/jvm/memory-areas' },
+              { text: '类加载机制', link: '/java/jvm/class-loading' },
+              { text: '垃圾回收与内存分配', link: '/java/jvm/gc-memory' },
+            ]
+          },
+          {
             text: '并发编程',
             collapsible: true,
             collapsed: true,
