@@ -75,6 +75,32 @@ PhantomReference<Object> phantom = new PhantomReference<>(obj, queue);
 
 ---
 
+## JDK 默认垃圾回收器是什么？
+
+默认垃圾回收器**取决于 JDK 版本**：
+
+| JDK 版本 | 默认垃圾回收器 | 说明 |
+|----------|----------------|------|
+| JDK 8 | Parallel GC | 年轻代 Parallel Scavenge + 老年代 Parallel Old，**吞吐量优先** |
+| JDK 9+ | G1 GC | 可预测停顿时间，更适合现代服务端应用 |
+
+**补充说明：**
+
+- **CMS** 从来不是默认垃圾回收器，后来已被废弃（JDK 14 移除）
+- **ZGC**、**Shenandoah** 等低延迟收集器需通过 JVM 参数显式启用
+
+```bash
+# 查看当前 JDK 默认 GC
+java -XX:+PrintCommandLineFlags -version
+
+# 显式启用 G1
+-XX:+UseG1GC
+
+# 显式启用 ZGC（JDK 15+）
+-XX:+UseZGC
+```
+
+
 ## CMS / G1 / ZGC 对比
 
 CMS、G1、ZGC 是 HotSpot JVM 三代具有代表性的垃圾回收器，目标都是回收垃圾，但**设计思想完全不同**：
@@ -199,7 +225,8 @@ JDK 7u4 引入，**JDK 9+ 默认 GC**。
 
 ```
 传统：Young | Old（连续）
-G1：  ┌──┬──┬──┬──┐
+G1：  
+      ┌──┬──┬──┬──┐
       │R1│R2│R3│R4│  每个 Region 可能是 Eden / Survivor / Old / Humongous
       ├──┼──┼──┼──┤
       │R5│R6│R7│R8│
@@ -406,6 +433,10 @@ public void method() {
 ---
 
 ## 面试总结
+
+**JDK 默认垃圾回收器是什么？**
+
+取决于 JDK 版本：JDK 8 默认 Parallel GC（吞吐量优先）；JDK 9 起默认 G1 GC（可预测停顿）。CMS 从未是默认收集器且已废弃；ZGC、Shenandoah 需显式启用。
 
 **JVM 如何判断对象可回收？**
 
