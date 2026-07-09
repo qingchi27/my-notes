@@ -68,6 +68,7 @@ export default defineConfig({
             items: [
               { text: 'Spring 概述与核心', link: '/ssm/spring' },
               { text: 'Spring Bean', link: '/ssm/spring-bean' },
+              { text: 'Spring AOP', link: '/ssm/spring-aop' },
             ]
           },
         ]
