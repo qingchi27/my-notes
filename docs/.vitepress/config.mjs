@@ -18,6 +18,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Java基础', link: '/java/' },
+      { text: 'Java SSM框架', link: '/ssm/' },
       { text: 'Redis', link: '/redis/' },
       { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -51,6 +52,22 @@ export default defineConfig({
               { text: 'synchronized', link: '/java/concurrency/synchronized' },
               { text: 'CAS & AQS', link: '/java/concurrency/cas-aqs' },
               { text: '线程池（ThreadPool）', link: '/java/concurrency/thread-pool' },
+            ]
+          },
+        ]
+      },
+      {
+        text: 'Java SSM框架',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          {
+            text: 'Spring',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'Spring 概述与核心', link: '/ssm/spring' },
+              { text: 'Spring Bean', link: '/ssm/spring-bean' },
             ]
           },
         ]

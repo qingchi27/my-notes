@@ -3,11 +3,14 @@ layout: home
 
 hero:
   name: "学习笔记"
-  tagline: "涵盖 Java 基础、Redis 等内容"
+  tagline: "涵盖 Java 基础、SSM 框架、Redis 等内容"
   actions:
     - theme: brand
       text: Java 基础
       link: /java/
+    - theme: brand
+      text: Java SSM 框架
+      link: /ssm/
     - theme: brand
       text: Redis
       link: /redis/
@@ -21,6 +24,8 @@ hero:
 features:
   - title: Java 基础
     details: 学习 Java 语法、面向对象、集合框架、多线程等核心内容，打好坚实基础
+  - title: Java SSM 框架
+    details: Spring、Spring MVC、MyBatis 三大框架的核心思想、使用方式与整合实践
   - title: Redis
     details: Redis实战、Redis设计与实现
   # - title: 消息队列
