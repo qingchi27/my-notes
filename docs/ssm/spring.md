@@ -111,13 +111,13 @@ BeanFactory 的增强版本，**实际开发中主要使用它**。
 
 ```
 Spring Framework
-├── Spring Core      ← 核心：IOC 容器、依赖注入
-├── Spring Beans     ← Bean 管理与生命周期
-├── Spring Context   ← ApplicationContext、事件、国际化
-├── Spring JDBC      ← 简化数据库访问
-├── Spring Web       ← Web 开发、Spring MVC
-├── Spring AOP       ← 面向切面编程
-└── Spring Test      ← 集成 JUnit、Mock 测试
+├── Spring Core             ← 核心：IOC 容器、依赖注入
+├── Spring Beans            ← Bean 管理与生命周期
+├── Spring Context          ← ApplicationContext、事件、国际化
+├── Spring Data Access      ← 简化数据库访问,集成ORM框架
+├── Spring Web              ← Web 开发、Spring MVC
+├── Spring AOP              ← 面向切面编程
+└── Spring Test             ← 集成 JUnit、Mock 测试
 ```
 
 | 模块                     | 主要功能                                                        |

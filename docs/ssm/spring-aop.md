@@ -86,7 +86,7 @@ public class LogAspect {
 
 ### 4. 底层原理
 
-Spring AOP 底层依赖**动态代理**（JDK 动态代理 / CGLIB 动态代理），详见 [第三章](#三什么是动态代理-jdk-动态代理和-cglib-动态代理有什么区别)。
+Spring AOP 底层依赖**动态代理**（JDK 动态代理 / CGLIB 动态代理）详情问题三动态代理。
 
 ---
 
