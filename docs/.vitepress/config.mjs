@@ -69,6 +69,16 @@ export default defineConfig({
               { text: 'Spring 概述与核心', link: '/ssm/spring' },
               { text: 'Spring Bean', link: '/ssm/spring-bean' },
               { text: 'Spring AOP', link: '/ssm/spring-aop' },
+              { text: 'Spring 事务', link: '/ssm/spring-transaction' },
+              { text: 'Spring MVC', link: '/ssm/spring-mvc' },
+            ]
+          },
+          {
+            text: 'MyBatis',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'MyBatis', link: '/ssm/mybatis' },
             ]
           },
         ]
