@@ -20,6 +20,7 @@ export default defineConfig({
       { text: 'Java基础', link: '/java/' },
       { text: 'Java框架', link: '/ssm/' },
       { text: 'Redis', link: '/redis/' },
+      { text: '算法', link: '/algorithm/' },
       { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
     ],
@@ -112,6 +113,21 @@ export default defineConfig({
               { text: 'Git基础', link: '/git/git-base' },
             ]
           }
+        ]
+      },
+      {
+        text: '算法',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          {
+            text: '数组',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '二分法查找有序数组目标值', link: '/algorithm/array/二分法查找有序数组目标值' },
+            ]
+          },
         ]
       }
     ],
