@@ -18,7 +18,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Java基础', link: '/java/' },
-      { text: 'Java SSM框架', link: '/ssm/' },
+      { text: 'Java框架', link: '/ssm/' },
       { text: 'Redis', link: '/redis/' },
       { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -57,7 +57,7 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Java SSM框架',
+        text: 'Java 框架',
         collapsible: true,
         collapsed: false,
         items: [
@@ -70,7 +70,14 @@ export default defineConfig({
               { text: 'Spring Bean', link: '/ssm/spring-bean' },
               { text: 'Spring AOP', link: '/ssm/spring-aop' },
               { text: 'Spring 事务', link: '/ssm/spring-transaction' },
-              { text: 'Spring MVC', link: '/ssm/spring-mvc' },
+            ]
+          },
+          {
+            text: 'Spring MVC',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'Spring MVC', link: '/ssm/spring-mvc/spring-mvc' },
             ]
           },
           {
@@ -79,6 +86,7 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'MyBatis', link: '/ssm/mybatis' },
+              { text: 'MyBatis-Plus', link: '/ssm/mybatis-plus' },
             ]
           },
         ]

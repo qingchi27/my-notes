@@ -1,4 +1,4 @@
-# Java SSM 框架
+# Java 框架
 
 SSM 是 Java 企业级开发中最经典的技术组合之一，由 **Spring**、**Spring MVC**、**MyBatis** 三大框架构成。
 
