@@ -82,6 +82,14 @@ export default defineConfig({
             ]
           },
           {
+            text: 'Spring Boot',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'Spring Boot', link: '/ssm/spring-boot/springboot' },
+            ]
+          },
+          {
             text: 'MyBatis',
             collapsible: true,
             collapsed: false,
