@@ -45,17 +45,17 @@ Spring MVC 的核心流程可以概括为：
 
 ```mermaid
 flowchart TD
-    A[浏览器] --> B[DispatcherServlet<br/>前端控制器]
-    B --> C[HandlerMapping<br/>处理器映射器]
-    C --> D[HandlerExecutionChain<br/>Controller + 拦截器]
-    D --> E[HandlerAdapter<br/>处理器适配器]
-    E --> F[Controller]
-    F --> G[Service]
-    G --> H[DAO]
-    H --> I[(数据库)]
-    I --> J[返回结果 Model]
-    J --> K[ViewResolver<br/>视图解析器]
-    K --> L[View / JSP 等]
+    A["浏览器"] --> B["DispatcherServlet<br/>前端控制器"]
+    B --> C["HandlerMapping<br/>处理器映射器"]
+    C --> D["HandlerExecutionChain<br/>Controller + 拦截器"]
+    D --> E["HandlerAdapter<br/>处理器适配器"]
+    E --> F["Controller"]
+    F --> G["Service"]
+    G --> H["DAO"]
+    H --> I[("数据库")]
+    I --> J["返回结果 Model"]
+    J --> K["ViewResolver<br/>视图解析器"]
+    K --> L["View / JSP 等"]
     L --> A
 ```
 
@@ -63,16 +63,16 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[浏览器 / Vue] --> B[DispatcherServlet]
-    B --> C[HandlerMapping]
-    C --> D[HandlerAdapter]
-    D --> E[Controller]
-    E --> F[Service]
-    F --> G[DAO]
-    G --> H[(数据库)]
+    A["浏览器 / Vue"] --> B["DispatcherServlet"]
+    B --> C["HandlerMapping"]
+    C --> D["HandlerAdapter"]
+    D --> E["Controller"]
+    E --> F["Service"]
+    F --> G["DAO"]
+    G --> H[("数据库")]
     H --> E
-    E --> I[HttpMessageConverter]
-    I --> J[JSON]
+    E --> I["HttpMessageConverter"]
+    I --> J["JSON"]
     J --> A
 ```
 
@@ -246,13 +246,13 @@ Interceptor（后置）
 
 ```mermaid
 flowchart TD
-    A[浏览器] --> B[DispatcherServlet]
-    B --> C[HandlerMapping]
-    C --> D[Interceptor.preHandle]
-    D --> E[Controller]
-    E --> F[Interceptor.postHandle]
-    F --> G[视图渲染 / JSON 返回]
-    G --> H[Interceptor.afterCompletion]
+    A["浏览器"] --> B["DispatcherServlet"]
+    B --> C["HandlerMapping"]
+    C --> D["Interceptor.preHandle"]
+    D --> E["Controller"]
+    E --> F["Interceptor.postHandle"]
+    F --> G["视图渲染 / JSON 返回"]
+    G --> H["Interceptor.afterCompletion"]
     H --> A
 ```
 

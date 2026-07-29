@@ -162,12 +162,12 @@ Spring 注解分几类：Bean 管理（`@Component`/`@Service`/`@Repository`/`@C
 ```mermaid
 flowchart TD
     A["@SpringBootApplication"] --> B["@EnableAutoConfiguration"]
-    B --> C[AutoConfigurationImportSelector]
+    B --> C["AutoConfigurationImportSelector"]
     C --> D["读取 spring.factories<br/>或 AutoConfiguration.imports"]
-    D --> E[加载 xxxAutoConfiguration]
+    D --> E["加载 xxxAutoConfiguration"]
     E --> F["@Conditional 条件判断"]
-    F --> G[创建 Bean]
-    G --> H[加入 Spring IOC 容器]
+    F --> G["创建 Bean"]
+    G --> H["加入 Spring IOC 容器"]
 ```
 
 ### 1. 自动装配入口
@@ -497,20 +497,20 @@ public class InitRunner implements CommandLineRunner {
 
 ```mermaid
 flowchart TD
-    A[main] --> B[SpringApplication.run]
-    B --> C[创建 SpringApplication]
-    C --> D[判断应用类型]
-    D --> E[加载 Listener / Initializer]
-    E --> F[创建 Environment]
-    F --> G[创建 ApplicationContext]
-    G --> H[prepareContext]
-    H --> I[refreshContext]
-    I --> J[Bean 扫描]
-    J --> K[自动装配]
-    K --> L[Bean 实例化]
-    L --> M[启动 Tomcat]
-    M --> N[执行 Runner]
-    N --> O[启动完成]
+    A["main"] --> B["SpringApplication.run"]
+    B --> C["创建 SpringApplication"]
+    C --> D["判断应用类型"]
+    D --> E["加载 Listener / Initializer"]
+    E --> F["创建 Environment"]
+    F --> G["创建 ApplicationContext"]
+    G --> H["prepareContext"]
+    H --> I["refreshContext"]
+    I --> J["Bean 扫描"]
+    J --> K["自动装配"]
+    K --> L["Bean 实例化"]
+    L --> M["启动 Tomcat"]
+    M --> N["执行 Runner"]
+    N --> O["启动完成"]
 ```
 
 ### 五、重点源码关系
@@ -634,12 +634,12 @@ my-log-spring-boot-autoconfigure    ← 自动配置代码
 
 ```mermaid
 flowchart TD
-    A[业务项目引入 starter] --> B[读取 AutoConfiguration.imports]
-    B --> C[LogAutoConfiguration]
-    C --> D[@Conditional 判断]
-    D --> E[@Bean 创建]
-    E --> F[IOC 容器]
-    F --> G[@Autowired 使用]
+    A["业务项目引入 starter"] --> B["读取 AutoConfiguration.imports"]
+    B --> C["LogAutoConfiguration"]
+    C --> D["@Conditional 判断"]
+    D --> E["@Bean 创建"]
+    E --> F["IOC 容器"]
+    F --> G["@Autowired 使用"]
 ```
 
 ### 面试回答版

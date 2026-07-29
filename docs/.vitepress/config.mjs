@@ -1,7 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: "My Notes",
   description: "Learning Notes",
   base: '/my-notes/',
@@ -11,7 +12,25 @@ export default defineConfig({
     server: {
       host: '127.0.0.1',
       port: 3000
+    },
+    // Mermaid 依赖的 dayjs 为 CJS，需强制预构建，否则报 default export 错误
+    optimizeDeps: {
+      include: ['dayjs', 'mermaid', '@braintree/sanitize-url']
+    },
+    resolve: {
+      alias: {
+        dayjs: 'dayjs/',
+      }
+    },
+    build: {
+      commonjsOptions: {
+        include: [/dayjs/, /node_modules/]
+      }
     }
+  },
+  // 允许节点中使用 HTML（如 <br/>）等写法，保证流程图正常渲染
+  mermaid: {
+    securityLevel: 'loose',
   },
   themeConfig: {
     mediumZoom: true,
@@ -67,10 +86,10 @@ export default defineConfig({
             collapsible: true,
             collapsed: false,
             items: [
-              { text: 'Spring 概述与核心', link: '/ssm/spring' },
-              { text: 'Spring Bean', link: '/ssm/spring-bean' },
-              { text: 'Spring AOP', link: '/ssm/spring-aop' },
-              { text: 'Spring 事务', link: '/ssm/spring-transaction' },
+              { text: 'Spring 概述与核心', link: '/ssm/spring/spring' },
+              { text: 'Spring Bean', link: '/ssm/spring/spring-bean' },
+              { text: 'Spring AOP', link: '/ssm/spring/spring-aop' },
+              { text: 'Spring 事务', link: '/ssm/spring/spring-transaction' },
             ]
           },
           {
@@ -94,8 +113,8 @@ export default defineConfig({
             collapsible: true,
             collapsed: false,
             items: [
-              { text: 'MyBatis', link: '/ssm/mybatis' },
-              { text: 'MyBatis-Plus', link: '/ssm/mybatis-plus' },
+              { text: 'MyBatis', link: '/ssm/mybatis/mybatis' },
+              { text: 'MyBatis-Plus', link: '/ssm/mybatis/mybatis-plus' },
             ]
           },
         ]
@@ -134,6 +153,9 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: '二分法查找有序数组目标值', link: '/algorithm/array/二分法查找有序数组目标值' },
+              { text: '双指针反转链表', link: '/algorithm/array/双指针反转链表' },
+              { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
+              { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
             ]
           },
         ]
@@ -143,4 +165,4 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/qingchi27/my-notes' }
     ]
   }
-})
+}))
