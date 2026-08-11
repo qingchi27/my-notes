@@ -124,22 +124,22 @@ export default withMermaid(defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
-          {
-            text: 'Redis实战',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              { text: '初识Redis', link: '/redis/intro' },
-            ]
-          },
-          {
-            text: 'Git',
-            collapsible: true,
-            collapsed: true,
-            items: [
-              { text: 'Git基础', link: '/git/git-base' },
-            ]
-          }
+          { text: '初识 Redis', link: '/redis/intro' },
+          { text: 'Redis 数据对象', link: '/redis/data-objects' },
+          { text: 'Redis 执行', link: '/redis/execution' },
+          { text: 'Redis 持久化', link: '/redis/persistence' },
+          { text: 'Redis 内存淘汰策略', link: '/redis/eviction' },
+          { text: 'Redis 场景', link: '/redis/scenarios' },
+          { text: 'Redis 分布式锁', link: '/redis/distributed-lock' },
+          { text: 'Redis 集群', link: '/redis/cluster' },
+        ]
+      },
+      {
+        text: 'Git',
+        collapsible: true,
+        collapsed: true,
+        items: [
+          { text: 'Git基础', link: '/git/git-base' },
         ]
       },
       {

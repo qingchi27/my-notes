@@ -27,7 +27,7 @@ features:
   - title: Java 框架
     details: Spring、Spring MVC、MyBatis 三大框架的核心思想、使用方式与整合实践
   - title: Redis
-    details: Redis实战、Redis设计与实现
+    details: 从入门到集群：数据对象、执行模型、持久化、淘汰策略、场景与分布式锁
   # - title: 消息队列
   #   details: 学习 Kafka、RabbitMQ 等消息队列技术在异步处理和解耦中的应用
 ---
