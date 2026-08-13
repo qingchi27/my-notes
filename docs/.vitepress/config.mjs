@@ -38,6 +38,7 @@ export default withMermaid(defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Java基础', link: '/java/' },
       { text: 'Java框架', link: '/ssm/' },
+      { text: 'MySQL', link: '/mysql/' },
       { text: 'Redis', link: '/redis/' },
       { text: '算法', link: '/algorithm/' },
       { text: 'Git', link: '/git/' },
@@ -117,6 +118,20 @@ export default withMermaid(defineConfig({
               { text: 'MyBatis-Plus', link: '/ssm/mybatis/mybatis-plus' },
             ]
           },
+        ]
+      },
+      {
+        text: 'MySQL',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          { text: 'SQL 语法', link: '/mysql/sql-syntax' },
+          { text: '存储引擎', link: '/mysql/storage-engine' },
+          { text: '索引', link: '/mysql/indexes' },
+          { text: '事务', link: '/mysql/transaction' },
+          { text: '锁', link: '/mysql/lock' },
+          { text: '日志', link: '/mysql/log' },
+          { text: '高性能', link: '/mysql/high-performance' },
         ]
       },
       {

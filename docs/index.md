@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "学习笔记"
-  tagline: "涵盖 Java 基础、SSM 框架、Redis 等内容"
+  tagline: "涵盖 Java 基础、SSM 框架、MySQL、Redis 等内容"
   actions:
     - theme: brand
       text: Java 基础
@@ -11,6 +11,9 @@ hero:
     - theme: brand
       text: Java 框架
       link: /ssm/
+    - theme: brand
+      text: MySQL
+      link: /mysql/
     - theme: brand
       text: Redis
       link: /redis/
@@ -26,6 +29,8 @@ features:
     details: 学习 Java 语法、面向对象、集合框架、多线程等核心内容，打好坚实基础
   - title: Java 框架
     details: Spring、Spring MVC、MyBatis 三大框架的核心思想、使用方式与整合实践
+  - title: MySQL
+    details: SQL 语法、存储引擎、索引、事务、锁、日志与高性能优化
   - title: Redis
     details: 从入门到集群：数据对象、执行模型、持久化、淘汰策略、场景与分布式锁
   # - title: 消息队列
