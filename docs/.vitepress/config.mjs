@@ -168,9 +168,42 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '二分法查找有序数组目标值', link: '/algorithm/array/二分法查找有序数组目标值' },
-              { text: '双指针反转链表', link: '/algorithm/array/双指针反转链表' },
               { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
               { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
+            ]
+          },
+          {
+            text: '链表',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '双指针 - 反转链表', link: '/algorithm/linked-list/双指针-反转链表' },
+              { text: '虚拟头 - 两两交换链表节点', link: '/algorithm/linked-list/虚拟头-两两交换链表节点' },
+            ]
+          },
+          {
+            text: '滑动窗口',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '滑动窗口 - 长度最小的子数组', link: '/algorithm/sliding-window/滑动窗口-长度最小的子数组' },
+              { text: '滑动窗口 - 无重复字符的最长子串', link: '/algorithm/sliding-window/滑动窗口-无重复字符的最长子串' },
+            ]
+          },
+          {
+            text: '贪心',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '贪心 - 赢得比赛的最少训练时长', link: '/algorithm/greedy/贪心-赢得比赛的最少训练时长' },
+            ]
+          },
+          {
+            text: '设计',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '哈希双向链表 - LRU 缓存', link: '/algorithm/design/哈希双向链表-LRU缓存' },
             ]
           },
         ]
