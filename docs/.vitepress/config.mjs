@@ -51,6 +51,20 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           {
+            text: 'Java 语言基础',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '语言特点与运行原理', link: '/java/basics/language' },
+              { text: '语法与面向对象', link: '/java/basics/syntax' },
+              { text: '包装类型与 String', link: '/java/basics/string-wrapper' },
+              { text: '异常与泛型', link: '/java/basics/exception-generic' },
+              { text: '反射、动态代理与 SPI', link: '/java/basics/reflection' },
+              { text: 'IO 与序列化', link: '/java/basics/io' },
+              { text: 'Java 版本', link: '/java/basics/versions' },
+            ]
+          },
+          {
             text: 'JVM',
             collapsible: true,
             collapsed: true,
@@ -179,6 +193,8 @@ export default withMermaid(defineConfig({
             items: [
               { text: '双指针 - 反转链表', link: '/algorithm/linked-list/双指针-反转链表' },
               { text: '虚拟头 - 两两交换链表节点', link: '/algorithm/linked-list/虚拟头-两两交换链表节点' },
+              { text: '虚拟头 - 删除链表倒数第 N 个节点', link: '/algorithm/linked-list/虚拟头-删除链表倒数第N个节点' },
+              { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
             ]
           },
           {
