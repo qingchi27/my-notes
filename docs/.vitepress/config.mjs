@@ -34,6 +34,10 @@ export default withMermaid(defineConfig({
   },
   themeConfig: {
     mediumZoom: true,
+    outline: {
+      level: [2, 3],
+      label: '目录'
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Java基础', link: '/java/' },
@@ -50,7 +54,7 @@ export default withMermaid(defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
-          { text: 'Java基础', link: '/java/basics/java基础' },
+          { text: 'Java语言基础', link: '/java/basics/java基础' },
           { text: 'Java集合', link: '/java/basics/collection' },
           {
             text: 'JVM',

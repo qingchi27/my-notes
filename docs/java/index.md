@@ -4,7 +4,7 @@ Java 是一门面向对象的编程语言，广泛应用于企业级后端开发
 
 本模块主要围绕 **Java 后端开发**，系统整理：
 
-1. **Java基础** — 运行原理、语法与 OOP、包装类与 String、异常泛型、反射与 SPI、IO、序列化与版本
+1. **Java语言基础** — 运行原理、语法与 OOP、包装类与 String、异常泛型、反射与 SPI、IO、序列化与版本
 2. **Java集合** — Collection / Map 体系、HashMap、ConcurrentHashMap
 3. **JVM** — 内存区域、类加载、垃圾回收与调优
 4. **并发编程** — JMM、锁、CAS/AQS、线程池
