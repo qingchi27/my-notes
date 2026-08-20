@@ -4,9 +4,10 @@ Java 是一门面向对象的编程语言，广泛应用于企业级后端开发
 
 本模块主要围绕 **Java 后端开发**，系统整理：
 
-1. **Java 语言基础** — 运行原理、语法与 OOP、包装类与 String、异常泛型、反射与 SPI、IO、序列化与版本
-2. **JVM** — 内存区域、类加载、垃圾回收与调优
-3. **并发编程** — JMM、锁、CAS/AQS、线程池
+1. **Java基础** — 运行原理、语法与 OOP、包装类与 String、异常泛型、反射与 SPI、IO、序列化与版本
+2. **Java集合** — Collection / Map 体系、HashMap、ConcurrentHashMap
+3. **JVM** — 内存区域、类加载、垃圾回收与调优
+4. **并发编程** — JMM、锁、CAS/AQS、线程池
 
 ## 学习目标
 
@@ -16,14 +17,18 @@ Java 是一门面向对象的编程语言，广泛应用于企业级后端开发
 
 ## 目录
 
-- Java 语言基础
-  - [语言特点与运行原理](./basics/language)
-  - [语法与面向对象](./basics/syntax)
-  - [包装类](./basics/wrapper)
-  - [String](./basics/string)
-  - [异常](./basics/exception)
-  - [泛型](./basics/generic)
-  - [反射、动态代理与 SPI](./basics/reflection)
-  - [IO](./basics/io)
-  - [序列化](./basics/serialization)
-  - [Java 版本](./basics/versions)
+- [Java基础](./basics/java基础)
+- [Java集合](./basics/collection)
+- JVM
+  - [Java 内存区域](./jvm/memory-areas)
+  - [类加载机制](./jvm/class-loading)
+  - [垃圾回收与内存分配](./jvm/gc-memory)
+  - [JVM 调优](./jvm/jvm-tuning)
+- 并发编程
+  - [并发编程基础](./concurrency/basics)
+  - [ThreadLocal](./concurrency/threadlocal)
+  - [JMM](./concurrency/jmm)
+  - [volatile](./concurrency/volatile)
+  - [synchronized](./concurrency/synchronized)
+  - [CAS & AQS](./concurrency/cas-aqs)
+  - [线程池（ThreadPool）](./concurrency/thread-pool)

@@ -50,23 +50,8 @@ export default withMermaid(defineConfig({
         collapsible: true,
         collapsed: false,
         items: [
-          {
-            text: 'Java 语言基础',
-            collapsible: true,
-            collapsed: false,
-            items: [
-              { text: '语言特点与运行原理', link: '/java/basics/language' },
-              { text: '语法与面向对象', link: '/java/basics/syntax' },
-              { text: '包装类', link: '/java/basics/wrapper' },
-              { text: 'String', link: '/java/basics/string' },
-              { text: '异常', link: '/java/basics/exception' },
-              { text: '泛型', link: '/java/basics/generic' },
-              { text: '反射、动态代理与 SPI', link: '/java/basics/reflection' },
-              { text: 'IO', link: '/java/basics/io' },
-              { text: '序列化', link: '/java/basics/serialization' },
-              { text: 'Java 版本', link: '/java/basics/versions' },
-            ]
-          },
+          { text: 'Java基础', link: '/java/basics/java基础' },
+          { text: 'Java集合', link: '/java/basics/collection' },
           {
             text: 'JVM',
             collapsible: true,
