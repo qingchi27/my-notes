@@ -1,50 +1,51 @@
 # Java 版本
 
-对高级 Java 岗位，重点掌握 **Java 8 + 11 + 17 + 21** 这些 LTS，不必逐个背 9、10、12、13 的小特性。
+对高级 Java 岗位，重点掌握 **Java 8 + 11 + 17 + 21** 这些 LTS。
 
 ---
 
-## 1. Java 8（LTS，必须掌握）
+## 37. Java 8（LTS）
 
-- Lambda
-- Stream
-- Optional
-- 接口默认方法 / 静态方法
-- 新日期时间 API（`java.time`）
-- 方法引用
-- ConcurrentHashMap 优化（分段锁改为 CAS + synchronized）
-- 元空间 Metaspace 替代永久代
+- Lambda 表达式：`() -> {}`，函数式编程
+- Stream API：链式操作集合，支持过滤、映射、归约
+- Optional：避免空指针，显式处理可能为空的情况
+- 方法引用：`ClassName::methodName`
+- 接口默认方法 / 静态方法：`default` 关键字
+- 新日期时间 API：`LocalDateTime`、`ZonedDateTime`（`java.time` 包）
+- ConcurrentHashMap 优化：分段锁改为 CAS + synchronized
+- 元空间（Metaspace）：替代永久代（PermGen）
 
 ---
 
-## 2. Java 11（LTS）
+## 38. Java 11（LTS）
 
-- HTTP Client 正式标准化，支持异步
-- ZGC 首次出现（当时为实验性）
+- HTTP Client API：标准化，支持异步
+- ZGC：低延迟垃圾回收器（实验性）
 - String 新方法：`isBlank()`、`lines()`、`strip()`、`repeat()`
-- `var` 可用于 Lambda 参数
-- Flight Recorder 开源
+- 局部变量类型推断增强：`var` 可用于 Lambda 参数
+- 移除 Java EE 和 CORBA 模块
+- Flight Recorder：开源（之前是商业版功能）
 
 ---
 
-## 3. Java 17（LTS，企业常用）
+## 39. Java 17（LTS）
 
-现在企业大量使用 Java 8 / 11 / 17 / 21，其中 17 是很常见的长期支持版本。
-
-- Sealed Classes（密封类，限制继承层次）
-- Records 正式化
-- Pattern Matching 相关增强
-- ZGC / Shenandoah 正式可用
+- 密封类（Sealed Classes）：`sealed`、`permits`，限制继承层次
+- 模式匹配 for switch：预览转正
+- 恢复始终严格的浮点运算
 - 弃用 Security Manager
+- 增强的伪随机数生成器
+- ZGC / Shenandoah 正式可用
+- Records 正式化
 
 ---
 
-## 4. Java 21（LTS）
+## 40. Java 21（LTS）
 
-- **虚拟线程 Virtual Threads**（Project Loom）：轻量级线程，大幅提升高并发 IO 场景的吞吐
-- Record Patterns、Pattern Matching for switch
-- Sequenced Collections：统一首尾操作
-- 结构化并发（预览）
-- 分代 ZGC
-
-面试优先能讲清：Java 8 的 Lambda / Stream，Java 17 的 Records / Sealed，Java 21 的虚拟线程。
+- 虚拟线程（Virtual Threads）：轻量级线程，极大提升并发处理能力（Project Loom）
+- 结构化并发（Structured Concurrency）：简化多线程编程，API 预览
+- 序列集合（Sequenced Collections）：`SequencedSet`、`SequencedMap`，统一首尾操作
+- Record 模式匹配：`instanceof` 和 `switch` 中直接解构 Record
+- String Templates（预览）：更安全的字符串拼接
+- 分代 ZGC：降低延迟，提升吞吐量
+- 弃用 32 位 Windows 支持

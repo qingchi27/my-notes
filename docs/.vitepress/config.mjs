@@ -57,10 +57,13 @@ export default withMermaid(defineConfig({
             items: [
               { text: '语言特点与运行原理', link: '/java/basics/language' },
               { text: '语法与面向对象', link: '/java/basics/syntax' },
-              { text: '包装类型与 String', link: '/java/basics/string-wrapper' },
-              { text: '异常与泛型', link: '/java/basics/exception-generic' },
+              { text: '包装类', link: '/java/basics/wrapper' },
+              { text: 'String', link: '/java/basics/string' },
+              { text: '异常', link: '/java/basics/exception' },
+              { text: '泛型', link: '/java/basics/generic' },
               { text: '反射、动态代理与 SPI', link: '/java/basics/reflection' },
-              { text: 'IO 与序列化', link: '/java/basics/io' },
+              { text: 'IO', link: '/java/basics/io' },
+              { text: '序列化', link: '/java/basics/serialization' },
               { text: 'Java 版本', link: '/java/basics/versions' },
             ]
           },
@@ -195,6 +198,7 @@ export default withMermaid(defineConfig({
               { text: '虚拟头 - 两两交换链表节点', link: '/algorithm/linked-list/虚拟头-两两交换链表节点' },
               { text: '虚拟头 - 删除链表倒数第 N 个节点', link: '/algorithm/linked-list/虚拟头-删除链表倒数第N个节点' },
               { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
+              { text: '快慢指针 - 环形链表 II', link: '/algorithm/linked-list/快慢指针-环形链表II' },
             ]
           },
           {
