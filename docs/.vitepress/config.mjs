@@ -176,6 +176,7 @@ export default withMermaid(defineConfig({
               { text: '二分法查找有序数组目标值', link: '/algorithm/array/二分法查找有序数组目标值' },
               { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
               { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
+              { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
             ]
           },
           {
@@ -205,6 +206,14 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '贪心 - 赢得比赛的最少训练时长', link: '/algorithm/greedy/贪心-赢得比赛的最少训练时长' },
+            ]
+          },
+          {
+            text: '堆',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '小顶堆 - 前 K 个高频元素', link: '/algorithm/heap/小顶堆-前K个高频元素' },
             ]
           },
           {
