@@ -24,6 +24,7 @@ Java 是一门面向对象的编程语言，广泛应用于企业级后端开发
   - [类加载机制](./jvm/class-loading)
   - [垃圾回收与内存分配](./jvm/gc-memory)
   - [JVM 调优](./jvm/jvm-tuning)
+  - [Full GC 频繁排查](./jvm/full-gc-troubleshooting)
 - 并发编程
   - [并发编程基础](./concurrency/basics)
   - [ThreadLocal](./concurrency/threadlocal)

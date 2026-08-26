@@ -62,16 +62,16 @@ PhantomReference<Object> phantom = new PhantomReference<>(obj, queue);
 
 ## 垃圾回收器
 
-| 收集器 | 区域 | 特点 |
-|--------|------|------|
-| Serial | 新生代 | 单线程，STW |
-| ParNew | 新生代 | Serial 的多线程版本 |
-| Parallel Scavenge | 新生代 | 关注吞吐量 |
-| Serial Old | 老年代 | Serial 的老年代版本 |
-| Parallel Old | 老年代 | 吞吐量优先 |
-| CMS | 老年代 | 并发、低延迟（JDK 14 废弃） |
-| G1 | 全堆 | 主流，可预测停顿 |
-| ZGC | 全堆 | 超低延迟（< 1ms） |
+| 收集器 | 区域   | 回收算法           | 特点 |
+|--------|--------|--------------------|------|
+| Serial | 新生代 | 复制算法           | 单线程，STW |
+| ParNew | 新生代 | 复制算法           | Serial 的多线程版本 |
+| Parallel Scavenge | 新生代 | 复制算法           |  关注吞吐量 |
+| Serial Old | 老年代 | 标记整理           | Serial 的老年代版本 |
+| Parallel Old | 老年代 | 标记整理           | 吞吐量优先 |
+| CMS | 老年代 | 标记清除           | 并发、低延迟（JDK 14 废弃） |
+| G1 | 全堆   | 分片收集+标记-复制 |  主流，可预测停顿 |
+| ZGC | 全堆   | 并发标记+并发复制  |  超低延迟（< 1ms） |
 
 ---
 

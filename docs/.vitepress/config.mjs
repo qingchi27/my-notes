@@ -65,6 +65,7 @@ export default withMermaid(defineConfig({
               { text: '类加载机制', link: '/java/jvm/class-loading' },
               { text: '垃圾回收与内存分配', link: '/java/jvm/gc-memory' },
               { text: 'jvm调优', link: '/java/jvm/jvm-tuning' },
+              { text: 'Full GC 频繁排查', link: '/java/jvm/full-gc-troubleshooting' },
             ]
           },
           {
