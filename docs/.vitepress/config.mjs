@@ -207,6 +207,7 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '贪心 - 赢得比赛的最少训练时长', link: '/algorithm/greedy/贪心-赢得比赛的最少训练时长' },
+              { text: '贪心 - 根据行列求和构造矩阵', link: '/algorithm/greedy/贪心-根据行列求和构造矩阵' },
             ]
           },
           {
