@@ -181,6 +181,16 @@ export default withMermaid(defineConfig({
             ]
           },
           {
+            text: '哈希',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '数组计数 - 有效的字母异位词', link: '/algorithm/hash/数组计数-有效的字母异位词' },
+              { text: '哈希集合 - 快乐数', link: '/algorithm/hash/哈希集合-快乐数' },
+              { text: '哈希表 - 两个数组的交集', link: '/algorithm/hash/哈希表-两个数组的交集' },
+            ]
+          },
+          {
             text: '链表',
             collapsible: true,
             collapsed: false,
