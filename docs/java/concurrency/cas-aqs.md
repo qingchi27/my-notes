@@ -162,6 +162,100 @@ await();     // 等待 state 为 0
 
 **底层：** AQS 的 state 作为计数器，`countDown` 通过 CAS 减 1，`await` 在 state 不为 0 时入队阻塞。
 
+> 注意：`CountDownLatch` 是一次性的，计数归零后不能重置。
+
+---
+
+## CyclicBarrier
+
+**CyclicBarrier 的作用和原理是什么？**
+
+让一组线程互相等待，全部到达屏障点后再一起继续执行。到达后屏障可以 **循环复用**。
+
+```java
+CyclicBarrier barrier = new CyclicBarrier(3);           // 3 个线程到齐
+CyclicBarrier barrier = new CyclicBarrier(3, () -> {}); // 到齐后执行 barrierAction
+
+barrier.await(); // 当前线程到达屏障，等待其他线程
+```
+
+**核心概念：**
+
+| 概念 | 说明 |
+|------|------|
+| parties | 需要到达屏障的线程数 |
+| await() | 当前线程到达，未到齐则阻塞 |
+| barrierAction | 最后一个到达的线程执行的回调（可选） |
+| 可循环 | 所有线程通过后，屏障自动重置，可再次使用 |
+
+**工作流程：**
+
+```
+线程 A await() ──→ 已到 1/3，阻塞
+线程 B await() ──→ 已到 2/3，阻塞
+线程 C await() ──→ 已到 3/3
+                      │
+                      ▼
+              执行 barrierAction（若有）
+                      │
+                      ▼
+              唤醒全部线程，一起继续
+                      │
+                      ▼
+              屏障重置，可再次 await
+```
+
+**使用场景：** 多线程分阶段计算、并行任务在每个阶段对齐后再进入下一阶段、多线程竞赛式协同。
+
+**底层：** 基于 `ReentrantLock` + `Condition` 实现，**不是直接基于 AQS**。
+
+- 内部维护 `count`（还差几个线程到齐）
+- `await()` 时 `count--`，未到 0 则 `condition.await()` 阻塞
+- 最后一个线程把 `count` 减到 0：执行 `barrierAction`，`signalAll` 唤醒，再重置 `count = parties`
+
+```java
+// 简化理解
+lock.lock();
+try {
+    count--;
+    if (count == 0) {
+        // 到齐：执行回调、唤醒所有人、重置
+        nextGeneration();
+    } else {
+        // 未到齐：等待被唤醒
+        trip.await();
+    }
+} finally {
+    lock.unlock();
+}
+```
+
+**常见异常：**
+
+| 异常 / 方法 | 说明 |
+|-------------|------|
+| `BrokenBarrierException` | 某个等待线程被中断或超时，屏障被破坏 |
+| `await(timeout, unit)` | 超时仍未到齐，屏障破坏，抛出 `TimeoutException` |
+| `reset()` | 手动重置屏障，已在等待的线程会抛 `BrokenBarrierException` |
+
+---
+
+## CountDownLatch vs CyclicBarrier
+
+| 对比项 | CountDownLatch | CyclicBarrier |
+|--------|----------------|---------------|
+| 作用 | 一个/多个线程等其他线程完成 | 一组线程互相等待，到齐后一起继续 |
+| 计数方向 | 做完的线程 `countDown`，等待方 `await` | 每个线程都调用 `await`，既是参与者也是等待者 |
+| 是否可复用 | 否，一次性 | 是，循环复用 |
+| 回调 | 无 | 可设置 `barrierAction` |
+| 底层 | AQS（共享模式） | `ReentrantLock` + `Condition` |
+| 典型场景 | 主线程等子任务全部结束 | 多阶段并行计算，每阶段对齐 |
+
+**一句话区分：**
+
+- **CountDownLatch**：老板等员工下班（老板不干活，员工干完打卡）
+- **CyclicBarrier**：同学约好一起出门（每个人都要到齐，而且可以约第二次）
+
 ---
 
 ## Semaphore
@@ -263,6 +357,10 @@ class MyFairLock extends AbstractQueuedSynchronizer {
 
 比 `synchronized` 的 `wait` / `notify` 更轻量，可精确唤醒指定线程。
 
+**CyclicBarrier 为什么不基于 AQS？**
+
+因为它需要「到齐后重置、循环复用 + 可选 barrierAction」，用 `ReentrantLock` + `Condition` 表达更直观；而 `CountDownLatch` 是一次性倒计时，更适合 AQS 共享模式。
+
 ---
 
 ## 面试总结（推荐背诵版）
@@ -275,6 +373,10 @@ class MyFairLock extends AbstractQueuedSynchronizer {
 
 **ReentrantLock：** 基于 AQS 实现的可重入独占锁。
 
-**CountDownLatch：** 基于 AQS 的计数器同步工具。
+**CountDownLatch：** 基于 AQS 的一次性计数器，等待其他线程完成。
+
+**CyclicBarrier：** 基于 `ReentrantLock` + `Condition` 的可循环屏障，一组线程互相等待到齐后一起继续。
 
 **Semaphore：** 基于 AQS 的资源限流工具。
+
+**CountDownLatch vs CyclicBarrier：** 前者一次性、一方等多方；后者可复用、多方互相等。

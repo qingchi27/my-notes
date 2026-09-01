@@ -188,6 +188,7 @@ export default withMermaid(defineConfig({
               { text: '数组计数 - 有效的字母异位词', link: '/algorithm/hash/数组计数-有效的字母异位词' },
               { text: '哈希集合 - 快乐数', link: '/algorithm/hash/哈希集合-快乐数' },
               { text: '哈希表 - 两个数组的交集', link: '/algorithm/hash/哈希表-两个数组的交集' },
+              { text: '哈希表 - 两数之和', link: '/algorithm/hash/哈希表-两数之和' },
             ]
           },
           {
@@ -198,6 +199,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 反转链表', link: '/algorithm/linked-list/双指针-反转链表' },
               { text: '虚拟头 - 两两交换链表节点', link: '/algorithm/linked-list/虚拟头-两两交换链表节点' },
               { text: '虚拟头 - 删除链表倒数第 N 个节点', link: '/algorithm/linked-list/虚拟头-删除链表倒数第N个节点' },
+              { text: '虚拟头 - 合并两个有序链表', link: '/algorithm/linked-list/虚拟头-合并两个有序链表' },
               { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
               { text: '快慢指针 - 环形链表 II', link: '/algorithm/linked-list/快慢指针-环形链表II' },
             ]
@@ -218,6 +220,14 @@ export default withMermaid(defineConfig({
             items: [
               { text: '贪心 - 赢得比赛的最少训练时长', link: '/algorithm/greedy/贪心-赢得比赛的最少训练时长' },
               { text: '贪心 - 根据行列求和构造矩阵', link: '/algorithm/greedy/贪心-根据行列求和构造矩阵' },
+            ]
+          },
+          {
+            text: '动态规划',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '动态规划 - 最大子数组和', link: '/algorithm/dp/动态规划-最大子数组和' },
             ]
           },
           {
