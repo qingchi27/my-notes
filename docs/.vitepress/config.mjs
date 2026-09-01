@@ -189,6 +189,7 @@ export default withMermaid(defineConfig({
               { text: '哈希集合 - 快乐数', link: '/algorithm/hash/哈希集合-快乐数' },
               { text: '哈希表 - 两个数组的交集', link: '/algorithm/hash/哈希表-两个数组的交集' },
               { text: '哈希表 - 两数之和', link: '/algorithm/hash/哈希表-两数之和' },
+              { text: '哈希表 - 最大网络秩', link: '/algorithm/hash/哈希表-最大网络秩' },
             ]
           },
           {
