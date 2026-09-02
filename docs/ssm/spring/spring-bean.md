@@ -306,29 +306,69 @@ private final Map<String, ObjectFactory<?>> singletonFactories;
 
 ### 5. 三级缓存解决循环依赖的流程
 
-以 `A → B → A` 为例：
+以 `A → B → A` 为例。Spring 创建 Bean 时：**先实例化，再填充属性**。实例化后立刻把 `ObjectFactory` 放入三级缓存，这样即使属性还没填完，别人也能拿到提前引用。
 
 ```mermaid
 flowchart TD
-    A1["1. 实例化 A"] --> A2["2. A 放入三级缓存<br/>singletonFactories"]
-    A2 --> A3["3. 填充 A 的属性，发现需要 B"]
-    A3 --> B1["4. 实例化 B"]
-    B1 --> B2["5. B 需要 A，查缓存"]
-    B2 --> B3["6. 三级缓存执行 ObjectFactory<br/>得到 A 的提前引用"]
-    B3 --> B4["7. B 完成初始化，放入一级缓存"]
-    B4 --> A4["8. A 完成初始化，放入一级缓存"]
-    A4 --> A5["9. 清除二、三级缓存"]
+    S1["创建 A"] --> S2["实例化 A"]
+    S2 --> S3["三级缓存放入 A 的 ObjectFactory"]
+    S3 --> S4["填充 A 的属性"]
+    S4 --> S5["发现依赖 B"]
+    S5 --> S6["创建 B"]
+    S6 --> S7["B 发现依赖 A"]
+    S7 --> S8["一级缓存没有 A"]
+    S8 --> S9["二级缓存没有 A"]
+    S9 --> S10["三级缓存找到 A 的 ObjectFactory"]
+    S10 --> S11["获取 A 的提前引用"]
+    S11 --> S12["将 A 注入 B"]
+    S12 --> S13["B 创建完成，进入一级缓存"]
+    S13 --> S14["将 B 注入 A"]
+    S14 --> S15["A 创建完成"]
+    S15 --> S16["A 进入一级缓存，清除二、三级"]
+```
+
+查找提前引用的顺序固定为：**一级 → 二级 → 三级**。只有前两级都没有，才会调用三级缓存里的 `ObjectFactory`。
+
+```mermaid
+flowchart TD
+    Q1{"一级缓存 singletonObjects<br/>有完整 A 吗?"} -->|有| R1["直接返回完整 Bean"]
+    Q1 -->|没有| Q2{"二级缓存 earlySingletonObjects<br/>有提前暴露的 A 吗?"}
+    Q2 -->|有| R2["返回半成品 / 提前代理"]
+    Q2 -->|没有| Q3{"三级缓存 singletonFactories<br/>有 A 的 ObjectFactory 吗?"}
+    Q3 -->|有| R3["getObject 拿到提前引用<br/>升入二级，移除三级"]
+    Q3 -->|没有| R4["A 尚未开始创建"]
 ```
 
 **详细步骤**：
 
-1. **实例化 A**：对象创建完成，属性为空（`b = null`）
-2. **A 放入三级缓存**：`singletonFactories.put("a", () -> getEarlyBeanReference("a"))`
-3. **填充 A 的属性**：发现需要 B，开始创建 B
-4. **实例化 B**：B 需要注入 A
-5. **查缓存获取 A**：一级 → 无；二级 → 无；三级 → 找到 ObjectFactory，执行得到 A 的提前引用（有 AOP 则返回代理对象）
-6. **B 完成初始化**：放入一级缓存
-7. **A 完成初始化**：注入 B，放入一级缓存，清除二、三级缓存
+1. **创建 A**：容器要获取 Bean `a`，一级缓存没有，开始 `doCreateBean`
+2. **实例化 A**：反射调用构造器，得到原始对象，此时 `b = null`
+3. **三级缓存放入 A 的 ObjectFactory**：`singletonFactories.put("a", () -> getEarlyBeanReference("a"))`。工厂先不执行，只是占位；若有 `@Transactional` 等 AOP，真正被调用时才在这里生成代理
+4. **填充 A 的属性**：`populateBean`，解析 `@Autowired`
+5. **发现依赖 B**：A 需要注入 B，而一级缓存没有 B，于是递归创建 B
+6. **创建 B**：同样先实例化 B，并把 B 的 `ObjectFactory` 放入三级缓存，再填充 B 的属性
+7. **B 发现依赖 A**：B 要注入 A，去缓存里找
+8. **一级没有**：`singletonObjects` 里没有 A（A 还没初始化完）
+9. **二级没有**：`earlySingletonObjects` 里也没有（还没有人向 A 要过提前引用）
+10. **三级找到 A 的 ObjectFactory**：`singletonFactories.get("a")` 命中
+11. **获取 A 的提前引用**：调用 `ObjectFactory.getObject()` → `getEarlyBeanReference`。无 AOP 则返回原始 A；有 AOP 则返回代理 A。结果放入**二级缓存**，并从三级缓存移除。之后再有人依赖 A，直接走二级，保证拿到的是**同一个**提前引用
+12. **将 A 注入 B**：B 拿到的是提前引用（可能是代理），属性填充完成
+13. **B 创建完成**：B 初始化结束，放入**一级缓存**，清除自己在二、三级中的记录
+14. **将 B 注入 A**：创建 B 的递归返回，A 继续 `populateBean`，把完整的 B 注入自己
+15. **A 创建完成**：执行初始化（`@PostConstruct` 等）。若第 11 步已经生成过代理，最终对外暴露的仍是那个提前引用，避免 B 持有的 A 和容器里的 A 不是同一个对象
+16. **进入一级缓存**：A 放入 `singletonObjects`，清除 A 在二、三级缓存中的记录
+
+**各阶段缓存状态**（只标 A、B 相关条目）：
+
+| 阶段 | 一级 `singletonObjects` | 二级 `earlySingletonObjects` | 三级 `singletonFactories` |
+|------|-------------------------|------------------------------|---------------------------|
+| 实例化 A，放入工厂 | 空 | 空 | A 的 ObjectFactory |
+| 创建 B，B 也放入工厂 | 空 | 空 | A 工厂、B 工厂 |
+| 取出 A 的提前引用 | 空 | 提前暴露的 A | B 工厂 |
+| B 创建完成 | 完整 B | 提前暴露的 A | 空 |
+| A 创建完成 | 完整 A、完整 B | 空 | 空 |
+
+关键点：**三级升二级**。`ObjectFactory` 只应执行一次；升入二级后，循环依赖链上的其他 Bean 都会拿到同一份提前引用。A 全部完成后，这份对象再进入一级，成为对外的单例。
 
 ### 6. 三级缓存的限制
 
@@ -358,13 +398,15 @@ public class B {
 
 > Spring 三级缓存是 Spring 解决**单例 Bean 循环依赖**的核心机制：
 >
-> - **一级缓存** `singletonObjects`：存放完整 Bean
-> - **二级缓存** `earlySingletonObjects`：存放提前暴露的 Bean
-> - **三级缓存** `singletonFactories`：存放 Bean 创建工厂
+> - **一级缓存** `singletonObjects`：存放初始化完成的完整 Bean
+> - **二级缓存** `earlySingletonObjects`：存放提前暴露的半成品 / 提前代理
+> - **三级缓存** `singletonFactories`：存放 `ObjectFactory`，真正需要提前引用时才调用
 >
-> 之所以需要三级缓存，是因为 Spring 需要解决 **AOP 代理对象提前暴露**的问题。如果只有二级缓存，只能暴露原始对象，无法保证注入的是最终代理对象。
+> 之所以需要三级缓存，是因为 Spring 要解决 **AOP 代理对象提前暴露**的问题。只有二级缓存时，提前暴露的只能是原始对象，无法保证注入的是最终代理。
 >
-> Spring 创建 Bean 时，先实例化对象并放入三级缓存；发生循环依赖时，另一个 Bean 通过三级缓存提前获取该对象，完成依赖注入；Bean 初始化完成后进入一级缓存。
+> 解决 `A → B → A` 的过程：先实例化 A，把 A 的 `ObjectFactory` 放入三级缓存，再填充属性；发现依赖 B 后去创建 B；B 注入 A 时按 **一级 → 二级 → 三级** 查找，前两级没有，就从三级取出工厂，得到 A 的提前引用（升入二级），注入 B；B 创建完成进入一级；再把完整的 B 注入 A；A 创建完成后进入一级缓存，并清除二、三级中自己的记录。
+>
+> 限制：只解决 **单例 + Setter/字段注入**；prototype 和构造器循环依赖都不能靠三级缓存解决。
 
 ---
 

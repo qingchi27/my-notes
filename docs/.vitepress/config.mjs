@@ -178,6 +178,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
               { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
               { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
+              { text: '双指针 - 四数之和', link: '/algorithm/array/双指针-四数之和' },
             ]
           },
           {
@@ -189,6 +190,7 @@ export default withMermaid(defineConfig({
               { text: '哈希集合 - 快乐数', link: '/algorithm/hash/哈希集合-快乐数' },
               { text: '哈希表 - 两个数组的交集', link: '/algorithm/hash/哈希表-两个数组的交集' },
               { text: '哈希表 - 两数之和', link: '/algorithm/hash/哈希表-两数之和' },
+              { text: '哈希表 - 四数相加 II', link: '/algorithm/hash/哈希表-四数相加II' },
               { text: '哈希表 - 最大网络秩', link: '/algorithm/hash/哈希表-最大网络秩' },
             ]
           },
