@@ -175,6 +175,7 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '二分法查找有序数组目标值', link: '/algorithm/array/二分法查找有序数组目标值' },
+              { text: '二分法 - 搜索旋转排序数组', link: '/algorithm/array/二分法-搜索旋转排序数组' },
               { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
               { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
               { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
@@ -205,6 +206,14 @@ export default withMermaid(defineConfig({
               { text: '虚拟头 - 合并两个有序链表', link: '/algorithm/linked-list/虚拟头-合并两个有序链表' },
               { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
               { text: '快慢指针 - 环形链表 II', link: '/algorithm/linked-list/快慢指针-环形链表II' },
+            ]
+          },
+          {
+            text: '二叉树',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '队列 - 二叉树层序遍历', link: '/algorithm/tree/队列-二叉树层序遍历' },
             ]
           },
           {
