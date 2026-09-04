@@ -217,6 +217,14 @@ export default withMermaid(defineConfig({
             ]
           },
           {
+            text: '栈',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '栈 - 有效的括号', link: '/algorithm/stack/栈-有效的括号' },
+            ]
+          },
+          {
             text: '滑动窗口',
             collapsible: true,
             collapsed: false,
