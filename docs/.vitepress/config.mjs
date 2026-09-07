@@ -225,6 +225,14 @@ export default withMermaid(defineConfig({
             ]
           },
           {
+            text: '字符串',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '双指针 - 反转字符串', link: '/algorithm/string/双指针-反转字符串' },
+            ]
+          },
+          {
             text: '滑动窗口',
             collapsible: true,
             collapsed: false,
