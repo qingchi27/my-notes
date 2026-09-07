@@ -230,6 +230,8 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '双指针 - 反转字符串', link: '/algorithm/string/双指针-反转字符串' },
+              { text: '双指针 - 反转字符串 II', link: '/algorithm/string/双指针-反转字符串II' },
+              { text: '字符串 - 路径加密', link: '/algorithm/string/字符串-路径加密' },
             ]
           },
           {
