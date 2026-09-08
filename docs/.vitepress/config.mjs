@@ -231,6 +231,8 @@ export default withMermaid(defineConfig({
             items: [
               { text: '双指针 - 反转字符串', link: '/algorithm/string/双指针-反转字符串' },
               { text: '双指针 - 反转字符串 II', link: '/algorithm/string/双指针-反转字符串II' },
+              { text: '双指针 - 反转字符串中的单词', link: '/algorithm/string/双指针-反转字符串中的单词' },
+              { text: '双指针 - 最长回文子串', link: '/algorithm/string/双指针-最长回文子串' },
               { text: '字符串 - 路径加密', link: '/algorithm/string/字符串-路径加密' },
             ]
           },
