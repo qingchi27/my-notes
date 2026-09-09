@@ -233,6 +233,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 反转字符串 II', link: '/algorithm/string/双指针-反转字符串II' },
               { text: '双指针 - 反转字符串中的单词', link: '/algorithm/string/双指针-反转字符串中的单词' },
               { text: '双指针 - 最长回文子串', link: '/algorithm/string/双指针-最长回文子串' },
+              { text: '双指针 - 分割两个字符串得到回文串', link: '/algorithm/string/双指针-分割两个字符串得到回文串' },
               { text: '字符串 - 路径加密', link: '/algorithm/string/字符串-路径加密' },
             ]
           },
@@ -252,6 +253,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '贪心 - 赢得比赛的最少训练时长', link: '/algorithm/greedy/贪心-赢得比赛的最少训练时长' },
               { text: '贪心 - 根据行列求和构造矩阵', link: '/algorithm/greedy/贪心-根据行列求和构造矩阵' },
+              { text: '贪心 - 买卖股票的最佳时机', link: '/algorithm/greedy/贪心-买卖股票的最佳时机' },
             ]
           },
           {
