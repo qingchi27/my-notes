@@ -125,6 +125,14 @@ export default withMermaid(defineConfig({
               { text: 'MyBatis-Plus', link: '/ssm/mybatis/mybatis-plus' },
             ]
           },
+          {
+            text: '微服务',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: '分布式面试题', link: '/ssm/microservice/distributed' },
+            ]
+          },
         ]
       },
       {
@@ -235,6 +243,8 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 最长回文子串', link: '/algorithm/string/双指针-最长回文子串' },
               { text: '双指针 - 分割两个字符串得到回文串', link: '/algorithm/string/双指针-分割两个字符串得到回文串' },
               { text: '字符串 - 路径加密', link: '/algorithm/string/字符串-路径加密' },
+              { text: '字符串 - 动态口令', link: '/algorithm/string/字符串-动态口令' },
+              { text: '暴力匹配 - 找出字符串中第一个匹配项的下标', link: '/algorithm/string/暴力匹配-找出字符串中第一个匹配项的下标' },
             ]
           },
           {

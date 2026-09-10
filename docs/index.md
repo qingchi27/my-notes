@@ -28,7 +28,7 @@ features:
   - title: Java 基础
     details: 学习 Java 语法、面向对象、集合框架、多线程等核心内容，打好坚实基础
   - title: Java 框架
-    details: Spring、Spring MVC、MyBatis 三大框架的核心思想、使用方式与整合实践
+    details: Spring、Spring MVC、MyBatis 与微服务分布式核心面试题
   - title: MySQL
     details: SQL 语法、存储引擎、索引、事务、锁、日志与高性能优化
   - title: Redis
