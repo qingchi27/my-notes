@@ -213,6 +213,7 @@ export default withMermaid(defineConfig({
               { text: '虚拟头 - 删除链表倒数第 N 个节点', link: '/algorithm/linked-list/虚拟头-删除链表倒数第N个节点' },
               { text: '虚拟头 - 合并两个有序链表', link: '/algorithm/linked-list/虚拟头-合并两个有序链表' },
               { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
+              { text: '快慢指针 - 环形链表', link: '/algorithm/linked-list/快慢指针-环形链表' },
               { text: '快慢指针 - 环形链表 II', link: '/algorithm/linked-list/快慢指针-环形链表II' },
             ]
           },
@@ -222,6 +223,15 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '队列 - 二叉树层序遍历', link: '/algorithm/tree/队列-二叉树层序遍历' },
+              { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
+            ]
+          },
+          {
+            text: '搜索',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'DFS / BFS - 岛屿数量', link: '/algorithm/graph/DFS-BFS-岛屿数量' },
             ]
           },
           {
