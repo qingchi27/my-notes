@@ -186,6 +186,7 @@ export default withMermaid(defineConfig({
               { text: '二分法 - 搜索旋转排序数组', link: '/algorithm/array/二分法-搜索旋转排序数组' },
               { text: '双指针 - 原地移除元素', link: '/algorithm/array/双指针-原地移除元素' },
               { text: '双指针 - 有序数组平方', link: '/algorithm/array/双指针-有序数组平方' },
+              { text: '双指针 - 合并两个有序数组', link: '/algorithm/array/双指针-合并两个有序数组' },
               { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
               { text: '双指针 - 四数之和', link: '/algorithm/array/双指针-四数之和' },
             ]
