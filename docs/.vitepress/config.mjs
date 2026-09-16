@@ -226,6 +226,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '队列 - 二叉树层序遍历', link: '/algorithm/tree/队列-二叉树层序遍历' },
               { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
+              { text: '递归 - 二叉树的最近公共祖先', link: '/algorithm/tree/递归-二叉树的最近公共祖先' },
             ]
           },
           {
@@ -242,6 +243,7 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '栈 - 有效的括号', link: '/algorithm/stack/栈-有效的括号' },
+              { text: '栈 - 用栈实现队列', link: '/algorithm/stack/栈-用栈实现队列' },
             ]
           },
           {
