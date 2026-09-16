@@ -130,8 +130,8 @@ export default withMermaid(defineConfig({
             collapsible: true,
             collapsed: false,
             items: [
-              { text: '分布式面试题', link: '/ssm/microservice/distributed' },
-              { text: 'Spring Cloud Alibaba 面试题', link: '/ssm/microservice/spring-cloud-alibaba' },
+              { text: '分布式', link: '/ssm/microservice/distributed' },
+              { text: 'Spring Cloud Alibaba', link: '/ssm/microservice/spring-cloud-alibaba' },
             ]
           },
         ]

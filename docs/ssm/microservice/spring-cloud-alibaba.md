@@ -1,8 +1,8 @@
-# Spring Cloud Alibaba 面试题
+# Spring Cloud Alibaba
 
 面向高级 Java。按调用链记：**拆分 → Nacos → Gateway → Feign + LoadBalancer → Sentinel → 故障排查**。
 
-幂等、CAP、限流算法、RPC 超时等通用原理见 [分布式面试题](./distributed)。
+幂等、CAP、限流算法、RPC 超时等通用原理见 [分布式](./distributed)。
 
 ```mermaid
 flowchart LR
@@ -40,14 +40,14 @@ flowchart LR
 
 在 Spring Cloud 之上补齐阿里系组件，覆盖注册发现、配置、调用、负载均衡、网关、限流熔断、分布式事务。
 
-| 组件 | 职责 |
-|------|------|
-| **Nacos** | 注册中心 + 配置中心 |
-| **OpenFeign** | 声明式远程调用 |
-| **LoadBalancer** | 从多实例里选一个（老项目常见 Ribbon） |
-| **Gateway** | 统一入口：路由、鉴权、跨域、限流、过滤 |
-| **Sentinel** | 限流、熔断、降级、系统保护 |
-| **Seata** | 分布式事务（见 [分布式面试题](./distributed)） |
+| 组件 | 职责                                     |
+|------|------------------------------------------|
+| **Nacos** | 注册中心 + 配置中心                      |
+| **OpenFeign** | 声明式远程调用                           |
+| **LoadBalancer** | 从多实例里选一个（老项目常见 Ribbon）    |
+| **Gateway** | 统一入口：路由、鉴权、跨域、限流、过滤   |
+| **Sentinel** | 限流、熔断、降级、系统保护               |
+| **Seata** | 分布式事务（见 [分布式](./distributed)） |
 
 ```mermaid
 flowchart TB
@@ -225,7 +225,7 @@ flowchart TB
 | 重试 | 应对抖动、实例重启 | 会放大流量；写操作可能重复执行 |
 | 幂等 | 同一业务执行一次和多次结果相同 | 重试的前提 |
 
-GET 查询通常可重试；扣款、下单必须带 `orderId` / `requestId`，服务端用唯一索引、状态机或 Redis SET NX 去重。细节见 [分布式面试题 · 幂等](./distributed#三幂等重试补偿消息可靠性)。
+GET 查询通常可重试；扣款、下单必须带 `orderId` / `requestId`，服务端用唯一索引、状态机或 Redis SET NX 去重。细节见 [分布式 · 幂等](./distributed#三幂等重试补偿消息可靠性)。
 
 > 超时控等待，重试救临时故障，幂等挡重复执行。
 
