@@ -190,6 +190,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 合并两个有序数组', link: '/algorithm/array/双指针-合并两个有序数组' },
               { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
               { text: '双指针 - 四数之和', link: '/algorithm/array/双指针-四数之和' },
+              { text: '快速排序 - 排序数组', link: '/algorithm/array/快速排序-排序数组' },
             ]
           },
           {
