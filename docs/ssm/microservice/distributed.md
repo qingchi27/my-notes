@@ -122,6 +122,8 @@ SET requestId value NX EX 60
 | MQ | Broker 故障不丢消息 | 持久化、副本、ACK、高可用集群 |
 | 消费者 | 失败可重新消费 | ACK、重试队列、死信队列、幂等消费 |
 
+Kafka / RocketMQ 的配置和机制见 [消息队列](/message-queue/)。
+
 ---
 
 ## 四、Redis 分布式锁

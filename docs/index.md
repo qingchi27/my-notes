@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "学习笔记"
-  tagline: "涵盖 Java 基础、SSM 框架、MySQL、Redis 等内容"
+  tagline: "涵盖 Java 基础、SSM 框架、MySQL、Redis、消息队列等内容"
   actions:
     - theme: brand
       text: Java 基础
@@ -18,11 +18,11 @@ hero:
       text: Redis
       link: /redis/
     - theme: brand
+      text: 消息队列
+      link: /message-queue/
+    - theme: brand
       text: Git
       link: /git/
-    # - theme: alt
-    #   text: 消息队列
-    #   link: /message-queue
 
 features:
   - title: Java 基础
@@ -33,6 +33,6 @@ features:
     details: SQL 语法、存储引擎、索引、事务、锁、日志与高性能优化
   - title: Redis
     details: 从入门到集群：数据对象、执行模型、持久化、淘汰策略、场景与分布式锁
-  # - title: 消息队列
-  #   details: 学习 Kafka、RabbitMQ 等消息队列技术在异步处理和解耦中的应用
+  - title: 消息队列
+    details: MQ 基础、Kafka、RocketMQ 与对比选型：可靠性、幂等、顺序、积压
 ---

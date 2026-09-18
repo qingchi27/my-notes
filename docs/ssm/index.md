@@ -19,16 +19,16 @@ SSM 是 Java 企业级开发中最经典的技术组合之一，由 **Spring**�
 
 ## 目录
 
-- Spring
+- **Spring**
   - [Spring 概述与核心](./spring/spring)
   - [Spring Bean](./spring/spring-bean)
   - [Spring AOP](./spring/spring-aop)
   - [Spring 事务](./spring/spring-transaction)
-- [Spring MVC](./spring-mvc/spring-mvc)
-- [Spring Boot](./spring-boot/springboot)
-- MyBatis
+- **[Spring MVC](./spring-mvc/spring-mvc)**
+- **[Spring Boot](./spring-boot/springboot)**
+- **MyBatis**
   - [MyBatis](./mybatis/mybatis)
   - [MyBatis-Plus](./mybatis/mybatis-plus)
-- 微服务
+- **微服务**
   - [分布式](./microservice/distributed)
   - [Spring Cloud Alibaba](./microservice/spring-cloud-alibaba)

@@ -44,6 +44,7 @@ export default withMermaid(defineConfig({
       { text: 'Java框架', link: '/ssm/' },
       { text: 'MySQL', link: '/mysql/' },
       { text: 'Redis', link: '/redis/' },
+      { text: '消息队列', link: '/message-queue/' },
       { text: '算法', link: '/algorithm/' },
       { text: 'Git', link: '/git/' },
       { text: 'Examples', link: '/markdown-examples' }
@@ -166,6 +167,17 @@ export default withMermaid(defineConfig({
         ]
       },
       {
+        text: '消息队列',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          { text: 'MQ 基础', link: '/message-queue/basics' },
+          { text: 'Kafka', link: '/message-queue/kafka' },
+          { text: 'RocketMQ', link: '/message-queue/rocketmq' },
+          { text: 'Kafka vs RocketMQ', link: '/message-queue/compare' },
+        ]
+      },
+      {
         text: 'Git',
         collapsible: true,
         collapsed: true,
@@ -245,6 +257,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '栈 - 有效的括号', link: '/algorithm/stack/栈-有效的括号' },
               { text: '栈 - 用栈实现队列', link: '/algorithm/stack/栈-用栈实现队列' },
+              { text: '队列 - 用队列实现栈', link: '/algorithm/stack/队列-用队列实现栈' },
             ]
           },
           {
