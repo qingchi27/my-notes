@@ -46,8 +46,7 @@ export default withMermaid(defineConfig({
       { text: 'Redis', link: '/redis/' },
       { text: '消息队列', link: '/message-queue/' },
       { text: '算法', link: '/algorithm/' },
-      { text: 'Git', link: '/git/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Git', link: '/git/' }
     ],
     sidebar: [
       {
