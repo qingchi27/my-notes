@@ -201,6 +201,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 合并两个有序数组', link: '/algorithm/array/双指针-合并两个有序数组' },
               { text: '双指针 - 三数之和', link: '/algorithm/array/双指针-三数之和' },
               { text: '双指针 - 四数之和', link: '/algorithm/array/双指针-四数之和' },
+              { text: '矩阵模拟 - 螺旋矩阵', link: '/algorithm/array/矩阵模拟-螺旋矩阵' },
               { text: '快速排序 - 排序数组', link: '/algorithm/array/快速排序-排序数组' },
             ]
           },
@@ -247,6 +248,7 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: 'DFS / BFS - 岛屿数量', link: '/algorithm/graph/DFS-BFS-岛屿数量' },
+              { text: '回溯 - 全排列', link: '/algorithm/graph/回溯-全排列' },
             ]
           },
           {
