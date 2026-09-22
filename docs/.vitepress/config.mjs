@@ -301,6 +301,7 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '动态规划 - 最大子数组和', link: '/algorithm/dp/动态规划-最大子数组和' },
+              { text: '动态规划 - 无矛盾的最佳球队', link: '/algorithm/dp/动态规划-无矛盾的最佳球队' },
             ]
           },
           {
