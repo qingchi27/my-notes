@@ -257,6 +257,8 @@ export default withMermaid(defineConfig({
             collapsed: false,
             items: [
               { text: '栈 - 有效的括号', link: '/algorithm/stack/栈-有效的括号' },
+              { text: '栈 - 逆波兰表达式求值', link: '/algorithm/stack/栈-逆波兰表达式求值' },
+              { text: '栈 - 删除字符串中的所有相邻重复项', link: '/algorithm/stack/栈-删除字符串中的所有相邻重复项' },
               { text: '栈 - 用栈实现队列', link: '/algorithm/stack/栈-用栈实现队列' },
               { text: '队列 - 用队列实现栈', link: '/algorithm/stack/队列-用队列实现栈' },
             ]
@@ -283,6 +285,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '滑动窗口 - 长度最小的子数组', link: '/algorithm/sliding-window/滑动窗口-长度最小的子数组' },
               { text: '滑动窗口 - 无重复字符的最长子串', link: '/algorithm/sliding-window/滑动窗口-无重复字符的最长子串' },
+              { text: '单调队列 - 滑动窗口最大值', link: '/algorithm/sliding-window/单调队列-滑动窗口最大值' },
             ]
           },
           {
