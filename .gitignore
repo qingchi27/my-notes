@@ -4,6 +4,7 @@ node_modules/
 # build output
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+
 .vite/
 dist/
 # logs
