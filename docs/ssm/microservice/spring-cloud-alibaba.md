@@ -66,6 +66,8 @@ flowchart TB
 
 ## 三、Nacos
 
+注册发现、配置、AP/CP、排查的展开见 [Nacos](./nacos)。这里只保留调用链里要用的骨架。
+
 ### 1. 服务注册发现
 
 四步，不要拆成四道题背：
@@ -298,7 +300,7 @@ flowchart TD
 |------|------|
 | 为何拆服务 | 复杂、部署、扩容、故障、协作 → 对应独立演进和隔离 |
 | SCA 架构 | Gateway 入口，Nacos 注册配置，Feign 调用，LB 选实例，Sentinel 防护 |
-| Nacos | 注册 / 心跳 / 本地缓存 / 变更通知；临时 AP，持久和配置 CP |
+| Nacos | 注册 / 心跳 / 本地缓存 / 变更通知；临时 AP，持久和配置 CP。细节见 [Nacos](./nacos) |
 | Gateway | Predicate 匹配 → Filter 洋葱圈 → `lb://` 转发 |
 | Feign | 接口代理成 HTTP；超时 + 有限重试 + 服务端幂等 |
 | Sentinel | 限流管自己，熔断管下游，降级保核心；OPEN / HALF-OPEN / CLOSED |

@@ -132,6 +132,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '分布式', link: '/ssm/microservice/distributed' },
               { text: 'Spring Cloud Alibaba', link: '/ssm/microservice/spring-cloud-alibaba' },
+              { text: 'Nacos', link: '/ssm/microservice/nacos' },
             ]
           },
         ]
@@ -190,6 +191,14 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           {
+            text: '基础',
+            collapsible: true,
+            collapsed: false,
+            items: [
+              { text: 'Java 队列 / 栈 / 堆', link: '/algorithm/basics/Java-队列栈堆' },
+            ]
+          },
+          {
             text: '数组',
             collapsible: true,
             collapsed: false,
@@ -227,6 +236,7 @@ export default withMermaid(defineConfig({
               { text: '虚拟头 - 两两交换链表节点', link: '/algorithm/linked-list/虚拟头-两两交换链表节点' },
               { text: '虚拟头 - 删除链表倒数第 N 个节点', link: '/algorithm/linked-list/虚拟头-删除链表倒数第N个节点' },
               { text: '虚拟头 - 合并两个有序链表', link: '/algorithm/linked-list/虚拟头-合并两个有序链表' },
+              { text: '虚拟头 - 合并 K 个有序链表', link: '/algorithm/linked-list/虚拟头-合并K个有序链表' },
               { text: '链表相交', link: '/algorithm/linked-list/链表相交' },
               { text: '快慢指针 - 环形链表', link: '/algorithm/linked-list/快慢指针-环形链表' },
               { text: '快慢指针 - 环形链表 II', link: '/algorithm/linked-list/快慢指针-环形链表II' },
