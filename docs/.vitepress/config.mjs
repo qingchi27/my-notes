@@ -45,6 +45,7 @@ export default withMermaid(defineConfig({
       { text: 'MySQL', link: '/mysql/' },
       { text: 'Redis', link: '/redis/' },
       { text: '消息队列', link: '/message-queue/' },
+      { text: '大模型', link: '/llm/' },
       { text: '算法', link: '/algorithm/' },
       { text: 'Git', link: '/git/' }
     ],
@@ -175,6 +176,14 @@ export default withMermaid(defineConfig({
           { text: 'Kafka', link: '/message-queue/kafka' },
           { text: 'RocketMQ', link: '/message-queue/rocketmq' },
           { text: 'Kafka vs RocketMQ', link: '/message-queue/compare' },
+        ]
+      },
+      {
+        text: '大模型',
+        collapsible: true,
+        collapsed: false,
+        items: [
+          { text: 'Transformer 与自注意力', link: '/llm/transformer-attention' },
         ]
       },
       {

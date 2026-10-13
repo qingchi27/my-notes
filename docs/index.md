@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "学习笔记"
-  tagline: "涵盖 Java 基础、SSM 框架、MySQL、Redis、消息队列等内容"
+  tagline: "涵盖 Java 基础、SSM 框架、MySQL、Redis、消息队列、大模型等内容"
   actions:
     - theme: brand
       text: Java 基础
@@ -21,6 +21,9 @@ hero:
       text: 消息队列
       link: /message-queue/
     - theme: brand
+      text: 大模型
+      link: /llm/
+    - theme: brand
       text: Git
       link: /git/
 
@@ -35,4 +38,6 @@ features:
     details: 从入门到集群：数据对象、执行模型、持久化、淘汰策略、场景与分布式锁
   - title: 消息队列
     details: MQ 基础、Kafka、RocketMQ 与对比选型：可靠性、幂等、顺序、积压
+  - title: 大模型
+    details: Transformer、自注意力、长序列与推理相关面试要点
 ---
