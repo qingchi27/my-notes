@@ -193,6 +193,7 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           { text: 'Transformer 与自注意力', link: '/llm/transformer-attention' },
+          { text: 'Agent 智能体', link: '/llm/agent' },
         ]
       },
       {
