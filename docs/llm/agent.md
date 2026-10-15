@@ -81,6 +81,8 @@ Thought → Action → Observation → Thought → …
 
 **ReAct 有反馈。** 不必一次生成完整计划，每步 Observation 驱动下一步。Thought 本身不碰环境；反馈发生在 Action 之后的 Observation。
 
+展开见 [ReAct 核心原理](./react)。
+
 #### （3）Reflexion：靠反思改进下次尝试
 
 用执行结果、失败信息或评估反馈做反思，写入经验，下次改策略。更强调**反思与经验积累**，不是互斥于 ReAct，可以叠在一起用。

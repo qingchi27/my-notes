@@ -5,7 +5,8 @@
 本模块主要面向 **高级 Java / AI 应用开发**，按以下路径整理：
 
 1. **Transformer 与自注意力** — RNN 对比、QKV、多头、长序列、因果掩码与 KV Cache
-2. **Agent 智能体** — 与普通 LLM 的区别、规划 / 记忆 / 工具、ReAct 与工程落地
+2. **Agent 智能体** — 与普通 LLM 的区别、规划 / 记忆 / 工具、工程落地
+3. **ReAct 核心原理** — Thought / Action / Observation、反馈闭环、与 Prompt / 工程演进
 
 ## 学习目标
 
