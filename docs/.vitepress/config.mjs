@@ -185,6 +185,7 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           { text: '网络传输场景', link: '/network/transmission' },
+          { text: '应用层面试题', link: '/network/application' },
         ]
       },
       {
