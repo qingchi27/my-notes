@@ -195,6 +195,7 @@ export default withMermaid(defineConfig({
           { text: 'Transformer 与自注意力', link: '/llm/transformer-attention' },
           { text: 'Agent 智能体', link: '/llm/agent' },
           { text: 'ReAct 核心原理', link: '/llm/react' },
+          { text: '规划能力主流方法', link: '/llm/planning' },
         ]
       },
       {
@@ -269,6 +270,7 @@ export default withMermaid(defineConfig({
             items: [
               { text: '递归 - 二叉树的前序遍历', link: '/algorithm/tree/递归-二叉树的前序遍历' },
               { text: '递归 - 翻转二叉树', link: '/algorithm/tree/递归-翻转二叉树' },
+              { text: '递归 - 对称二叉树', link: '/algorithm/tree/递归-对称二叉树' },
               { text: '队列 - 二叉树层序遍历', link: '/algorithm/tree/队列-二叉树层序遍历' },
               { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
               { text: '递归 - 二叉树的最近公共祖先', link: '/algorithm/tree/递归-二叉树的最近公共祖先' },

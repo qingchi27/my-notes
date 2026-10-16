@@ -7,6 +7,7 @@
 1. **Transformer 与自注意力** — RNN 对比、QKV、多头、长序列、因果掩码与 KV Cache
 2. **Agent 智能体** — 与普通 LLM 的区别、规划 / 记忆 / 工具、工程落地
 3. **ReAct 核心原理** — Thought / Action / Observation、反馈闭环、与 Prompt / 工程演进
+4. **规划能力主流方法** — CoT、Self-Consistency、ToT、GoT、Plan-and-Execute、Reflexion、LLM+P
 
 ## 学习目标
 
@@ -14,3 +15,4 @@
 - 能不看资料复述 Self-Attention 五步与公式
 - 能讲清长距离依赖、训练并行、平方级成本，以及因果掩码 / KV Cache
 - 能讲清 Agent 四件套，以及 ReAct 的 Observation 反馈闭环
+- 能按场景区分七种规划方法，并说出当前系统通常怎么组合
