@@ -272,7 +272,11 @@ export default withMermaid(defineConfig({
               { text: '递归 - 二叉树的前序遍历', link: '/algorithm/tree/递归-二叉树的前序遍历' },
               { text: '递归 - 翻转二叉树', link: '/algorithm/tree/递归-翻转二叉树' },
               { text: '递归 - 对称二叉树', link: '/algorithm/tree/递归-对称二叉树' },
+              { text: '递归 - 完全二叉树的节点个数', link: '/algorithm/tree/递归-完全二叉树的节点个数' },
+              { text: '递归 - 平衡二叉树', link: '/algorithm/tree/递归-平衡二叉树' },
+              { text: '递归 - 二叉树的所有路径', link: '/algorithm/tree/递归-二叉树的所有路径' },
               { text: '队列 - 二叉树层序遍历', link: '/algorithm/tree/队列-二叉树层序遍历' },
+
               { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
               { text: '递归 - 二叉树的最近公共祖先', link: '/algorithm/tree/递归-二叉树的最近公共祖先' },
             ]
