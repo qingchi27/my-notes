@@ -126,7 +126,7 @@ flowchart TD
 
 ### 5. TLS 握手（HTTPS）
 
-TCP 之上协商证书、算法、会话密钥。TLS 1.2 大约 2-RTT，TLS 1.3 大约 1-RTT。之后 HTTP 内容加密传。
+TCP 之上协商证书、算法、会话密钥。TLS 1.2 大约 2-RTT，TLS 1.3 大约 1-RTT。之后 HTTP 内容加密传。逐步报文、close_notify 和 HTTP 各版对这条链路的影响见 [HTTPS 详细过程](./https)。
 
 ### 6. 发 HTTP 请求
 
@@ -142,7 +142,7 @@ TCP 之上协商证书、算法、会话密钥。TLS 1.2 大约 2-RTT，TLS 1.3 
 
 ### 9. 连接关闭或复用
 
-HTTP/1.1 默认 keep-alive，后续请求可复用；结束时 **四次挥手**。
+HTTP/1.1 默认 keep-alive，后续请求可复用；结束时先 TLS `close_notify`，再 **四次挥手**。状态和 2MSL 见 [HTTPS 详细过程](./https)。
 
 > 口述版：URL → 缓存 → DNS → 三次握手 →（HTTPS 再 TLS）→ 请求 → 响应 → 渲染 → 复用或挥手。
 
