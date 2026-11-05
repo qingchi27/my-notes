@@ -42,7 +42,7 @@ features:
   - title: 消息队列
     details: MQ 基础、Kafka、RocketMQ 与对比选型：可靠性、幂等、顺序、积压
   - title: 计算机网络
-    details: 分层模型、DNS、输入网址全过程、HTTPS 握手与 HTTP 版本、端口四元组与排障
+    details: 分层模型、DNS、TCP/UDP、HTTPS 与 HTTP 版本、端口四元组与排障
   - title: 大模型
     details: Transformer、自注意力、长序列与推理相关面试要点
 ---

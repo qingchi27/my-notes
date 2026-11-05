@@ -122,7 +122,7 @@ flowchart TD
 2. 服务端 **SYN+ACK**（seq=y, ack=x+1）
 3. 客户端 **ACK**（ack=y+1）
 
-为什么三次不是两次：双方都要确认对方「能收也能发」；也能挡掉已失效的历史 SYN 突然到达造成服务端白建连接。三次是最小够用的次数。
+为什么三次不是两次：双方都要确认对方「能收也能发」；也能挡掉已失效的历史 SYN 突然到达造成服务端白建连接。三次是最小够用的次数。丢包重传、半连接队列和全连接队列见 [TCP / UDP 传输层](./tcp-udp)。
 
 ### 5. TLS 握手（HTTPS）
 
@@ -142,7 +142,7 @@ TCP 之上协商证书、算法、会话密钥。TLS 1.2 大约 2-RTT，TLS 1.3 
 
 ### 9. 连接关闭或复用
 
-HTTP/1.1 默认 keep-alive，后续请求可复用；结束时先 TLS `close_notify`，再 **四次挥手**。状态和 2MSL 见 [HTTPS 详细过程](./https)。
+HTTP/1.1 默认 keep-alive，后续请求可复用；结束时先 TLS `close_notify`，再 **四次挥手**。状态和 2MSL 见 [HTTPS 详细过程](./https)，TIME_WAIT / CLOSE_WAIT 的排查见 [TCP / UDP 传输层](./tcp-udp)。
 
 > 口述版：URL → 缓存 → DNS → 三次握手 →（HTTPS 再 TLS）→ 请求 → 响应 → 渲染 → 复用或挥手。
 

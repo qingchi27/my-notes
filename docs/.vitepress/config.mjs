@@ -185,6 +185,7 @@ export default withMermaid(defineConfig({
         collapsed: false,
         items: [
           { text: '网络传输场景', link: '/network/transmission' },
+          { text: 'TCP / UDP 传输层', link: '/network/tcp-udp' },
           { text: 'HTTPS 详细过程', link: '/network/https' },
           { text: '应用层面试题', link: '/network/application' },
         ]
@@ -282,6 +283,7 @@ export default withMermaid(defineConfig({
 
               { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
               { text: '递归 - 二叉树的最近公共祖先', link: '/algorithm/tree/递归-二叉树的最近公共祖先' },
+              { text: '递归 - 从中序与后序遍历序列构造二叉树', link: '/algorithm/tree/递归-从中序与后序遍历序列构造二叉树' },
             ]
           },
           {
@@ -315,6 +317,7 @@ export default withMermaid(defineConfig({
               { text: '双指针 - 反转字符串中的单词', link: '/algorithm/string/双指针-反转字符串中的单词' },
               { text: '双指针 - 最长回文子串', link: '/algorithm/string/双指针-最长回文子串' },
               { text: '双指针 - 分割两个字符串得到回文串', link: '/algorithm/string/双指针-分割两个字符串得到回文串' },
+              { text: '双指针 - 统计只差一个字符的子串', link: '/algorithm/string/双指针-统计只差一个字符的子串' },
               { text: '字符串 - 路径加密', link: '/algorithm/string/字符串-路径加密' },
               { text: '字符串 - 动态口令', link: '/algorithm/string/字符串-动态口令' },
               { text: '暴力匹配 - 找出字符串中第一个匹配项的下标', link: '/algorithm/string/暴力匹配-找出字符串中第一个匹配项的下标' },

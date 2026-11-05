@@ -103,7 +103,7 @@ sequenceDiagram
 
 两次不够：服务端还没确认客户端能收，也挡不住过期 SYN 突然到达后把连接建出来。第三次等于客户端声明「这是一次新连接，我能收」。
 
-客户端可以在第三次 ACK 里带上 TLS 的 ClientHello，TCP 和 TLS 在时间上接在一起。
+客户端可以在第三次 ACK 里带上 TLS 的 ClientHello，TCP 和 TLS 在时间上接在一起。丢包之后谁重传、两个队列分别在等什么，见 [TCP / UDP 传输层](./tcp-udp)。
 
 ---
 
@@ -328,7 +328,7 @@ MSL 是报文最大生存时间。Linux 上 `TIME_WAIT` 常见大约 60 秒。
 | TIME_WAIT | 主动关闭方等待 2MSL |
 | CLOSED | 连接已释放 |
 
-> `CLOSE_WAIT` 堆积，先查应用有没有及时关 Socket。`TIME_WAIT` 多，通常是主动关闭后的正常等待。
+> `CLOSE_WAIT` 堆积，先查应用有没有及时关 Socket。`TIME_WAIT` 多，通常是主动关闭后的正常等待。原因和排查见 [TCP / UDP 传输层](./tcp-udp)。
 
 ---
 
