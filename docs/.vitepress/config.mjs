@@ -284,6 +284,7 @@ export default withMermaid(defineConfig({
               { text: '队列 - 二叉树的锯齿形层序遍历', link: '/algorithm/tree/队列-二叉树的锯齿形层序遍历' },
               { text: '递归 - 二叉树的最近公共祖先', link: '/algorithm/tree/递归-二叉树的最近公共祖先' },
               { text: '递归 - 从中序与后序遍历序列构造二叉树', link: '/algorithm/tree/递归-从中序与后序遍历序列构造二叉树' },
+              { text: '递归 - 最大二叉树', link: '/algorithm/tree/递归-最大二叉树' },
             ]
           },
           {
